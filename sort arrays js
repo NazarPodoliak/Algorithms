@@ -1,3 +1,12 @@
+const size = prompt("Enter the size of array: ");
+const arrays = [];
+
+for (let i = 0; i < size; i++) {
+  arrays.push(Math.floor(Math.random() * 201) - 100);
+}
+
+console.log(arrays);
+
 function findSmallest(arr) {
   let smallest = arr[0];
   let smallestIndex = 0;
@@ -20,4 +29,33 @@ function selectionSort(arr) {
   return newArr;
 }
 
-console.log(selectionSort([5, 3, 6, 2, 10]));
+console.log("Sorted array from the smallest:", selectionSort(arrays));
+
+
+const sizee = prompt("Enter the size of array: ");
+const array = [];
+
+for (let i = 0; i < size; i++) {
+  array.push(Math.floor(Math.random() * 201) - 100);
+}
+
+console.log(array);
+
+function findBiggest(arr) {
+  let biggest = arr[0];
+  let biggestIndex = 0;
+  for (let k = 1; k < arr.length; k++) {
+    if (arr[k] > biggest) {
+      biggest = arr[k];
+      biggestIndex = k;
+    }
+  }
+  return biggestIndex;
+}
+
+function selectionSortt(arr) {
+  const newArr = [];
+  const length = arr.length;
+  for (let i = 0; i < length; i++) {
+    const biggest = findBiggest(arr);
+    newArr.push(arr.splice(biggest, 1)[0]);
