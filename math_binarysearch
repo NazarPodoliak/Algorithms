@@ -1,0 +1,27 @@
+let min_value, max_value; 
+let min_index, max_index; 
+
+for (let i = 0; i < 10; i++) {
+    let a_i = Math.pow(i, 2) + Math.pow(Math.cos(i + 3), 3) - Math.log2(i + 2);
+    array[i] = a_i;
+}
+
+min_value = array[0];
+max_value = array[0];
+min_index = 0;
+max_index = 0;
+
+for (let i = 1; i < 10; i++) {
+    if (array[i] < min_value) {
+        min_value = array[i];
+        min_index = i;
+    }
+    if (array[i] > max_value) {
+        max_value = array[i];
+        max_index = i;
+    }
+}
+
+console.log("Array: " + array);
+console.log("min element: " + min_value + " index: " + min_index);
+console.log("max element: " + max_value + " index: " + max_index);
